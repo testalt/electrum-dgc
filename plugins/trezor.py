@@ -6,17 +6,17 @@ from sys import stderr
 from time import sleep
 from base64 import b64encode, b64decode
 
-import electrum_ixc as electrum
-from electrum_ixc.account import BIP32_Account
-from electrum_ixc.bitcoin import EncodeBase58Check, public_key_to_bc_address, bc_address_to_hash_160
-from electrum_ixc.i18n import _
-from electrum_ixc.plugins import BasePlugin, hook
-from electrum_ixc.transaction import deserialize
-from electrum_ixc.wallet import NewWallet
-from electrum_ixc.util import print_error
+import electrum_dgc as electrum
+from electrum_dgc.account import BIP32_Account
+from electrum_dgc.bitcoin import EncodeBase58Check, public_key_to_bc_address, bc_address_to_hash_160
+from electrum_dgc.i18n import _
+from electrum_dgc.plugins import BasePlugin, hook
+from electrum_dgc.transaction import deserialize
+from electrum_dgc.wallet import NewWallet
+from electrum_dgc.util import print_error
 
-from electrum_ixc_gui.qt.password_dialog import make_password_dialog, run_password_dialog
-from electrum_ixc_gui.qt.util import ok_cancel_buttons, EnterButton
+from electrum_dgc_gui.qt.password_dialog import make_password_dialog, run_password_dialog
+from electrum_dgc_gui.qt.util import ok_cancel_buttons, EnterButton
 
 try:
     from trezorlib.client import types

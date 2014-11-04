@@ -22,8 +22,8 @@ from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 import PyQt4.QtCore as QtCore
 
-from electrum_ixc.i18n import _
-from electrum_ixc import ELECTRUM_VERSION, print_error
+from electrum_dgc.i18n import _
+from electrum_dgc import ELECTRUM_VERSION, print_error
 
 class VersionGetter(threading.Thread):
 
@@ -90,7 +90,7 @@ class UpdateLabel(QLabel):
         self.dialog.done(0)
   
     def open_website(self):
-        webbrowser.open("http://ixco.in/electrum")
+        webbrowser.open("http://dgc.electrum-alt.org")
         self.dialog.done(0)
 
     def mouseReleaseEvent(self, event):

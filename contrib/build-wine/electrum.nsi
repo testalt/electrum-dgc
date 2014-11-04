@@ -7,14 +7,14 @@
 ;General
 
   ;Name and file
-  Name "Electrum-IXC"
-  OutFile "dist/electrum-ixc-setup.exe"
+  Name "Electrum-dgc"
+  OutFile "dist/electrum-dgc-setup.exe"
 
   ;Default installation folder
-  InstallDir "$PROGRAMFILES\Electrum-IXC"
+  InstallDir "$PROGRAMFILES\Electrum-dgc"
 
   ;Get installation folder from registry if available
-  InstallDirRegKey HKCU "Software\Electrum-IXC" ""
+  InstallDirRegKey HKCU "Software\Electrum-dgc" ""
 
   ;Request application privileges for Windows Vista
   RequestExecutionLevel admin
@@ -36,7 +36,7 @@
 
   ;Start Menu Folder Page Configuration
   !define MUI_STARTMENUPAGE_REGISTRY_ROOT "HKCU"
-  !define MUI_STARTMENUPAGE_REGISTRY_KEY "Software\Electrum-IXC"
+  !define MUI_STARTMENUPAGE_REGISTRY_KEY "Software\Electrum-dgc"
   !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME "Start Menu Folder"
 
   ;!insertmacro MUI_PAGE_STARTMENU Application $StartMenuFolder
@@ -59,21 +59,21 @@ Section
   SetOutPath "$INSTDIR"
 
   ;ADD YOUR OWN FILES HERE...
-  file /r dist\electrum-ixc\*.*
+  file /r dist\electrum-dgc\*.*
 
   ;Store installation folder
-  WriteRegStr HKCU "Software\Electrum-IXC" "" $INSTDIR
+  WriteRegStr HKCU "Software\Electrum-dgc" "" $INSTDIR
 
   ;Create uninstaller
   WriteUninstaller "$INSTDIR\Uninstall.exe"
 
 
-  CreateShortCut "$DESKTOP\Electrum-IXC.lnk" "$INSTDIR\electrum-ixc.exe" ""
+  CreateShortCut "$DESKTOP\Electrum-dgc.lnk" "$INSTDIR\electrum-dgc.exe" ""
 
   ;create start-menu items
-  CreateDirectory "$SMPROGRAMS\Electrum-IXC"
-  CreateShortCut "$SMPROGRAMS\Electrum-IXC\Uninstall.lnk" "$INSTDIR\Uninstall.exe" "" "$INSTDIR\Uninstall.exe" 0
-  CreateShortCut "$SMPROGRAMS\Electrum-IXC\Electrum-IXC.lnk" "$INSTDIR\electrum-ixc.exe" "" "$INSTDIR\electrum-ixc.exe" 0
+  CreateDirectory "$SMPROGRAMS\Electrum-dgc"
+  CreateShortCut "$SMPROGRAMS\Electrum-dgc\Uninstall.lnk" "$INSTDIR\Uninstall.exe" "" "$INSTDIR\Uninstall.exe" 0
+  CreateShortCut "$SMPROGRAMS\Electrum-dgc\Electrum-dgc.lnk" "$INSTDIR\electrum-dgc.exe" "" "$INSTDIR\electrum-dgc.exe" 0
 
 SectionEnd
 
@@ -95,10 +95,10 @@ Section "Uninstall"
 
   RMDir "$INSTDIR"
 
-  Delete "$DESKTOP\Electrum-IXC.lnk"
-  Delete "$SMPROGRAMS\Electrum-IXC\*.*"
-  RmDir  "$SMPROGRAMS\Electrum-IXC"
+  Delete "$DESKTOP\Electrum-dgc.lnk"
+  Delete "$SMPROGRAMS\Electrum-dgc\*.*"
+  RmDir  "$SMPROGRAMS\Electrum-dgc"
 
-  DeleteRegKey /ifempty HKCU "Software\Electrum-IXC"
+  DeleteRegKey /ifempty HKCU "Software\Electrum-dgc"
 
 SectionEnd
